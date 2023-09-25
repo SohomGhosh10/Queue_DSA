@@ -38,8 +38,8 @@ int dequeue(struct queue* q){ // Dequeue operation
     if(isEmpty(q)){
         printf("Queue underflow\n");
     }else{
-        q->f++;
-        a = q->arr[q->f];
+        q->f++; // incrementing front pointer
+        a = q->arr[q->f]; // storing elements in front index
     }
     return a;
 }
@@ -59,8 +59,8 @@ int main(){
     enqueue(&q,12);
     enqueue(&q,15);
 
-    printf("Dequeuing elements %d\n",dequeue(&q));
-    printf("Dequeuing elements %d\n",dequeue(&q));
+    printf("Dequeuing elements %d\n",dequeue(&q)); // 12
+    printf("Dequeuing elements %d\n",dequeue(&q)); // 15
 
     if(isEmpty(&q)){
         printf("Queue is empty\n");
