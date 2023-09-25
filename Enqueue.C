@@ -3,13 +3,13 @@
 
 struct queue{
     int size;
-    int f;
-    int r;
-    int* arr;
+    int f; // Front pointer
+    int r; // Rear pointer
+    int* arr; // Array size
 };
 
 int isEmpty(struct queue* q){
-    if(q->f == q->r){
+    if(q->f == q->r){ // Queue empty condition
         return 1;
     }else{
         return 0;
@@ -17,7 +17,7 @@ int isEmpty(struct queue* q){
 }
 
 int isFull(struct queue* q){ // Checking for full
-    if(q->r == q->size - 1){
+    if(q->r == q->size - 1){ // Queue full condition
         return 1;
     }else{
         return 0;
@@ -29,14 +29,16 @@ void enqueue(struct queue* q, int val){ // Enqueue operation
         printf("Queue Overflow\n");
     }else{
         q->r++;
-        q->arr[q->r] = val;
+        q->arr[q->r] = val; // pushing elements
     }
 }
 
 int main(){
     struct queue q;
+    // initialize
+
     q.size = 10;
-    q.f = -1;
+    q.f = -1; 
     q.r = -1;
     q.arr = (int*)malloc(q.size * sizeof(int)); // Created array
 
