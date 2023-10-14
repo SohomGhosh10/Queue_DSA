@@ -49,11 +49,11 @@ int main(){
 
     enqueue(&q,12);
     enqueue(&q,15);
-    if(isEmpty(&q)){
+    if(isEmpty(&q)){ // for empty
         printf("Queue is empty\n");
     }
 
-    if(isFull(&q)){
+    if(isFull(&q)){ // for full
         printf("Queue is full\n");
     }
     
